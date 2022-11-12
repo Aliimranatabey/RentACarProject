@@ -28,14 +28,15 @@ public class CarService {
         return carRepository.findAll();
     }
 
-    public void delete(long id) {
+    public String delete(long id) {
         carRepository.deleteById(id);
+        return "Deleted";
     }
 
-    // public Car updateCar(Long textId, Car car) {
-    //     carRepository.saveAndFlush(car);
-    //     return saveCar(car);
-    // }
+    public String update(Car car) {
+        carRepository.saveAndFlush(car);
+        return "Updated";
+    }
 }
 
 

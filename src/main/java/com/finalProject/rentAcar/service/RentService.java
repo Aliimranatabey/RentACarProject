@@ -29,12 +29,13 @@ public class RentService {
         return rentRepository.findAll();
     }
 
-    public void delete(long id){
+    public String delete(long id){
         rentRepository.deleteById(id);
+        return "Deleted";
     }
 
-    // public String updateRent(Rent rent){
-    //     rentRepository.saveAndFlush(rent);
-    //     return "Updated";
-    // }
+    public String update(Rent rent){
+        rentRepository.saveAndFlush(rent);
+        return "Updated";
+    }
 }
